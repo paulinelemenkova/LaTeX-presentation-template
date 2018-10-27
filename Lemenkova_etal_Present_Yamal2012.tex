@@ -1,0 +1,438 @@
+\documentclass[10pt]{beamer}
+%\usecolortheme[named=green]{structure}
+\mode<presentation> {
+\usetheme{Singapore}
+%\usetheme{default}
+\usefonttheme{serif}
+\usecolortheme{default}
+%\usecolortheme{crane}
+%\usecolortheme{wolverine}
+%\usefonttheme{structuresmallcapsserif}
+%\usefonttheme{structureitalicserif}
+\setbeamertemplate{footline}[page number]
+%\setbeamercovered{transparent}
+\setbeamercovered{invisible}
+% To remove the navigation symbols from the bottom of slides%
+\setbeamertemplate{navigation symbols}{}  
+}
+\usepackage[english]{babel}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{fancybox}
+\usepackage{marvosym}
+\usepackage{hyperref}
+\usepackage{helvet}
+\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{bm} 
+% For typesetting bold math (not \mathbold)
+\logo{\includegraphics[height=0.4cm]{logo-TUD.png}}
+%
+\title[ILWIS GIS for monitoring tundra landscapes]{\textsc{ILWIS GIS for monitoring \\landscapes in tundra ecosystems:}}
+\subtitle[short subtitle]{\textsc{Yamal Peninsula, Russia}}
+\author{\textsc{Polina Lemenkova}}
+\institute[U of X]{\textsc{Dresden University of Technology (TU Dresden)} \\
+\medskip{\color{blue}\Letter :  {Polina.Lemenkova@mailbox.tu-dresden.de}}\\
+\vspace{1em}\tiny {\textsc{This presentation is made using \LaTeX}}
+}
+\date{\textsc{\today}}
+
+%%%%%%%%%%%%%%%% Start Presentation of Polina Lemenkova  %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+%
+
+\begin{frame}
+\frametitle{Outline}\small
+\tableofcontents%[part=1,pausesections]
+\end{frame}
+
+%
+\section{Introduction} 
+\subsection{Research aim} 
+\subsection{Research objective}
+
+\begin{frame}
+\frametitle{Brief Summary}\transboxout
+\begin{block}{Brief Summary}
+	\alert<1>{Research aim}:
+		\begin{itemize}
+			\item distribution of various land cover types in Yamal Peninsula\\
+			\item monitoring changes in tundra landscapes
+			\item analysis of the landscape dynamics during the past two decades (1988-2011).\\ 
+		\end{itemize}
+	\vspace{1em}	
+	\alert<2>{Data}: \\Landsat TM scenes for 1988 and 2011 years.\\ 
+	\vspace{1em}
+	\alert<3>{Originality}:\\Application of ILWIS GIS spatial analysis tools and Landsat imagery for Bovanenkovo region in Yamal. \\
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Summary}\transboxout
+	\begin{block}{Methodology}	
+	\begin{wrapfigure}{r}{0.4\textwidth}
+				\centering
+				\includegraphics[width=3cm,height=3cm]{ilwis.jpg}\caption{1. ILWIS GIS. Source: www.ilwis.org/}
+			\end{wrapfigure}
+		\alert<1>{Technical tools}:\\ The RS data processing was performed in ILWIS GIS software: Fig.1
+		\vspace{1em}
+		
+		\alert<2>{Research method}:\\ Image interpretation applied to Landsat TM scenes, and supervised classification
+	\end{block}
+\end{frame}
+%
+\section{Study area} 
+\subsection{Geographic location} 
+\subsection{Environmental settings}
+
+\begin{frame} \frametitle{Research Area}
+	\begin{block}{Geographic location: Yamal Peninsula, north Russia}
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat [Geographic location of Yamal Peninsula \tiny{Map source: google.com}]{\includegraphics[scale=0.3]{locationY.jpg}}
+		\hspace{1em}
+		\subfloat [Location of the study area on Yamal (western coast). \tiny{Source: Bruce Forbes}]{\includegraphics[scale=0.18]{location-AOI.jpg}}
+		
+		
+	\end{figure}	
+	\end{block}
+\end{frame}
+%
+
+\begin{frame} \frametitle{Environment of Yamal, part 1}
+	\begin{block}{Yamal Peninsula: geomorphology}
+	\begin{wrapfigure}{r}{0.4\textwidth}
+ 		\includegraphics[scale=1.5]{YamalTundraRiver.jpg}\caption{\small{4. Landscapes of Yamal. \tiny{Source: http://pixtale.net/}}}
+	\end{wrapfigure} 
+	\vspace{1em}
+	Specific climatic-environmental settings of Yamal Peninsula:\\ flat geomorphology, elevations $<$ 90 m.\\
+	Processes: 
+	\begin{itemize}
+		\item seasonal flooding, 
+		\item active erosion processing, 
+		\item permafrost distribution and 
+		\item intensive local landslides formation. 
+	\end{itemize}
+	\end{block}
+\end{frame}
+%
+
+\begin{frame} \frametitle{Environment of Yamal, part 2}
+	\begin{block}{Yamal Peninsula: environmental settings}
+		One of the typical process in Yamal tundra: cryogenic landslides.\\
+		Landslides affect local ecosystem structure, because they change vegetation types	 recovering after the disaster.
+	\begin{figure}
+ 		\includegraphics[scale=0.2]{type-landscape.jpg}\caption{\tiny{5. Landscapes of Yamal.}}
+	\end{figure} 
+	\end{block}
+\end{frame}
+%%%
+
+\begin{frame} \frametitle{Landscapes of Yamal Peninsula}
+	\begin{block}{Land cover classes: 1-4 from 11}
+		
+\begin{figure}[H]
+	\centering
+		\subfloat [Type 1. Shrub tundra. \tiny{Source: www.novaonline.nvcc.edu/}]{\includegraphics[scale=1.15]{type-YamalTundra.jpg}}
+		\hspace{0.1em}
+		\subfloat [2. Dwarf willows. \tiny{from: www.travelanguist.com}]{\includegraphics[scale=0.058]{type-dwarf-willow.jpg}}
+		\hspace{0.1em}
+		\subfloat [Type 3. Arctic willows. \tiny{Source: http://nature-plants.com}]{\includegraphics[scale=0.205]{type-Arctic-willow.jpg}} \hspace{0.1em}
+		\subfloat [4. Sparse short shrub tundra. \tiny{(www.polarfield.com)}]{\includegraphics[scale=0.24]{type-sparse-short.jpg}}
+\end{figure}
+\end{block}
+\end{frame}
+
+%
+\begin{frame} \frametitle{Landscapes of Yamal Peninsula (continue)}
+\begin{block}{Land cover classes (5-8 from 11)}
+\begin{figure}[H]
+	\centering
+		\subfloat [Type 5. Dry grass heath tundra. \tiny{(from polarfield.com)}]{\includegraphics[scale=0.18]{type-heath.jpg}}
+		\hspace{0.2em}
+		\subfloat [6. Sedge grass tundra. \tiny{Source: arcticatlas.org}]{\includegraphics[scale=0.24]{type-sedge.jpg}}
+		\hspace{0.1em}
+		\subfloat [7. Dry short shrub tundra. \tiny{(www.arcticatlas.org)}]{\includegraphics[scale=0.24]{type-dry-short.jpg}}
+		\hspace{0.2em}
+		\subfloat [Sphagnum moss. \tiny{Source: google.com}]{\includegraphics[scale=0.18]{type-sphagnum.jpg}}
+		
+\end{figure}
+\end{block}
+\end{frame}
+
+%
+\begin{frame} \frametitle{Landscapes of Yamal Peninsula (continue)}
+\begin{block}{Land cover classes (9 to 11 from 11)}	
+	
+\begin{figure}[H]
+	\centering
+		\subfloat [Type 9. Dry short shrub sedge tundra. \tiny{Source: www.britannica.com}]{\includegraphics[scale=0.4]{type-dry-short-sedge.jpg}}
+		\hspace{0.2em}
+		\subfloat [Type 10. Wetlands. \tiny{Source: google.com}]{\includegraphics[scale=0.3]{type-lakes.jpg}}
+		\hspace{0.1em}\\
+		\subfloat [Type 11. Short shrub tundra. \tiny{(Image source: www.arctic-predators.uit.no)}]{\includegraphics[scale=0.6]{type-short-shrub.jpg}}
+		
+\end{figure}
+\end{block}
+\end{frame}
+%%%
+
+\begin{frame} \frametitle{Human activities on Yamal: part 1}
+	\begin{block}{Yamal Peninsula: reindeer herding}
+	The most typical anthropogenic activity on Yamal Peninsula is reindeer herding (Fig.3). Yamal is a homeland for ca 5000 nomadic Nenets tribes migrating with herds up to 1200 km annually.	
+	
+	\begin{figure}[h]
+	\centering
+		\subfloat [Tundra landscape: reindeer herds. \tiny{Source: environmentalresearchweb.org}]{\includegraphics[width=4cm]{yamal.jpg}}
+		\hspace{0.1em}
+		\subfloat [Typical scene of reindeer grazing. \tiny{Photo: Bryan Alexander}]{\includegraphics[width=4.5cm]{reindeer.jpg}}
+	\end{figure}
+
+Herding is natural process. However, it may have negative effects: pasture overgrazing and pressure on vegetation coverage.
+	\end{block}
+\end{frame}
+%
+
+\begin{frame} \frametitle{Human activities on Yamal: part 2}
+	\begin{block}{Yamal Peninsula: gas exploration}
+	Yamal Peninsula is a place where the gas field "Bovanenkovo" is being explored (Fig.3).
+	Geological gas exploration cause serious anthropogenic pressure on the environment.
+	Indirectly it also includes additional construction of roads, settlements, human facilities, etc. 	
+	
+	\begin{figure}[h]
+	\centering
+		\subfloat [\small{Yamal: scheme of gas exploration}. \tiny{(www.reindeerblog.org)}]{\includegraphics[scale=0.075]{bovanenkovo-map.jpg}}
+		\hspace{0.1em}
+		\subfloat [View on the gas exploration station. \tiny{Photo: http://barentsobserver.com}]{\includegraphics[scale=0.33]{bovanenkovo.jpg}}
+	\end{figure}
+	\end{block}
+\end{frame}
+%
+
+\section{Methods} 
+\subsection{Remote Sensing}
+	\subsubsection{\tiny Data capture} 
+	\subsubsection{\tiny Data processing} 
+\subsection{ILWIS GIS}
+	\subsubsection{\tiny Supervised classification}
+	\subsubsection{\tiny Thematic mapping}
+
+
+\begin{frame} \frametitle{Research Methods: Step 1.}
+\begin{block}{Data pre-processing}
+	\alert<1>{a) import .img into ASCII raster format (GDAL)}. \\After converting, each image contained collection of 7 raster bands \\
+	\alert<2>{b) visual color and contrast enhancement} \\
+	\alert<3>{c) geographic referencing} of Landsat scenes, initially based on WGS 1984 datum: UTM (Universal Transverse Mercator) Projection, Eastern Zone 42, Northern Zone W, (Georeference Corner Editor, ILWIS).\\
+	\alert<4>{d) crop of study area} The area of interest (AOI) was identified and cropped on the raw images. This area shows Bovanenkovo region in a large scale and best represents typical tundra landscapes. 
+\end{block}
+\end{frame}
+%
+
+\begin{frame} \frametitle{Research Methods: Step 2.}
+\begin{block}{Image classification}
+\begin{itemize}
+	\item The key research method is supervised classification (Minimal Distance), which is based on the spatial analysis of spectral signatures of object variables, i.e. vegetation types. 
+	\item The classes sampling was performed using Sample Set tool in ILWIS GIS. 
+	\item The training pixels for each land cover type were selected as representative samples and stored as classification key. 
+	\item Requirement for training pixels: they have contrasting colors, visually visible and distinguishable on the image.
+\end {itemize}
+
+\end{block}
+\end{frame}
+%
+%
+%
+
+\begin{frame} \frametitle{Research Methods: Step 3.}
+\begin{wrapfigure}{r}{0.4\textwidth}
+ 		\includegraphics[scale=0.16]{AOI-cut.jpg}\caption{\tiny{21. Thematic mapping}}
+\end{wrapfigure} 
+\hspace{5em}
+
+\begin{block}{Thematic mapping}
+Layouts of main research results represent maps of the land cover classes.\\ \vspace{1ex}The created domain Land classes includes legend with representation colors visualizing each category.
+
+\end{block}
+\end{frame}
+%
+
+
+\begin{frame}
+\frametitle{GIS Mapping (1988)}
+\begin{columns}
+	\column{.5\textwidth}
+		\begin{block}{Landsat TM scene} 
+			\begin{figure}
+ 				 \includegraphics[scale=0.1]{image-1988.jpg}\caption{\tiny{22. Landsat TM, 1988}}
+			\end{figure} 
+		\end{block}
+	\column{.5\textwidth} 
+		\begin{block}{\Ovalbox{\tiny Classified study area (from image 1988)}}
+			\begin{figure}
+ 		 		\includegraphics[scale=0.2]{Map-1988.png}\caption{\tiny{23. Map of land cover classes, 1988}}
+			\end{figure} 
+		\end{block}
+\end{columns}
+\end{frame}
+%
+
+\begin{frame}
+\frametitle{GIS Mapping (2011)}
+\begin{columns}
+	\column{.5\textwidth}
+		\begin{block}{Landsat TM scene}
+			\begin{figure}
+ 				 \includegraphics[scale=0.65]{image-2011.png}\caption{\tiny{24. Landsat TM, 2011}}
+			\end{figure} 
+		\end{block}
+	\column{.5\textwidth} 
+		\begin{block}{\shadowbox{\tiny Classified study area (from image 2011)}}
+			\begin{figure}
+ 				 \includegraphics[scale=0.2]{Map-2011.png}\caption{\tiny{25. Land cover classes}}
+			\end{figure} 
+		\end{block}
+\end{columns}
+
+\end{frame}
+%
+
+\section{Results} 
+\subsection{Thematic maps} 
+\subsection{Assessment of areas}
+
+\begin{frame}
+\frametitle{Results}
+\begin{alertblock}
+{Land cover classes: assessment of changes}
+\begin{table}[c]\footnotesize
+	%\rowcolors{1}{Ivory}{GhostWhite}
+	\tiny \caption{1. Statistics on land cover classes, Bovanenkovo region, Yamal}
+	\begin{center}
+		\begin{tabular}{|p{18em} | c | c | c | c |}
+			\hline\hline
+			\texttt{Land Cover Class} & 1988, \# pixels & 2011, \# pixels & 1988, ha & 2011, ha \\ \hline\hline
+			\texttt{Shrub tundra} & 220447 & 168226 & 1146.3244 & 874.7752 \\ \hline
+			\texttt{Short shrub tundra} & 165079 & 270158 & 858.4108 & 1404.8216 \\ \hline
+			\texttt{Willows} & 193645 & 457004 & 1006.954 & 2376.4208 \\ \hline
+			\texttt{Tall willows} & 103954 & 71952 & 540.5608 & 374.1504 \\ \hline
+			\texttt{Sparse short shrub tundra} & 176511 & 759380 & 917.8572 & 3948.776 \\ \hline
+			\texttt{Dry grass heath} & 641420 & 231719 & 3335.384 & 1204.9388 \\ \hline
+			\texttt{Sedge grass tundra} & 27545 & 57052 & 143.234 & 296.6704 \\ \hline
+			\texttt{Dry short shrub tundra} & 8984 & 16993 & 46.7168 & 88.3636 \\ \hline
+			\texttt{Wet peatland} & 761231 & 531809 & 3958.4012 & 2765.4068 \\ \hline
+			\texttt{Peatland (sphagnum)} & 120328 & 93979 & 625.7056 & 488.6908 \\ \hline
+			\texttt{Dry short shrub-sedge tundra} & 173693 & 92242 & 903.2036 & 479.6584 \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\end{alertblock}
+\end{frame}
+%
+
+\section{Discussion} 
+
+\begin{frame}
+\frametitle{Discussion}
+ \begin{block}{Environmental Analysis}
+Results show: 
+\begin{itemize}
+	\item overall increase of woody vegetation (willows and shrubs)
+	\item  decrease of peatlands, grass and heath areas. 
+\end{itemize}
+This illustrates environmental process of greening in Arctic, i.e. the unnatural increase of woody plants. The gradual changes in patterns and distribution of plant species affect landscape structure in Yamal.\\ Triggering factors:  
+\begin{itemize}
+	\item complex environmental changes in Arctic
+	\item local cryogenic processes (e.g. successive change in vegetation recovering after cryogenic landslides)
+\end{itemize}
+\end{block}
+\end{frame}
+%
+\section{R\'esum\'e} 
+
+\begin{frame}
+\frametitle{R\'esum\'e}
+\begin{block}{Summary} 
+\begin{itemize}
+	\item[*] Current research details changes in spatial distribution of land cover types in selected area of western Yamal Peninsula
+	\item[*] The time span covers past 2 decades (1988 - 2011)
+	\item[*] The research is technically performed by means of ILWIS GIS, based on spatial analysis of classified Landsat TM images.
+	\item[*] The results of spatial analysis are presented as thematic maps illustrating changes in land cover types on Yamal Peninsula. GIS mapping is based on the image classification. 
+	\item[*] As a result of climate and environmental impacts, there are detected changes in the vegetation structure.
+	\item[*] Main outcome: overall increase in woody plants, e.g. \emph{"short shrub tundra", "sparse short shrub tundra"} and \emph{"dry short shrub tundra"}), and slight decrease in grasses, heath and peatland. 
+	\item[*] There is process of greening detected in Yamal tundra. It indicates structural variations in ecosystems. 
+\end{itemize}
+
+
+\end{block}
+\end{frame}
+%
+
+\section{Conclusion} 
+
+\begin{frame}
+\frametitle{Conclusion}
+\begin{block}{...to conclude:}
+\begin{itemize}
+	\item[$\diamond$] GIS-based mapping (e.g. ILWIS GIS) is important tool for the landscape monitoring and management. 
+	\item[$\diamond$] Processing of remote sensing data (e.g. Landsat TM scenes) by means of GIS improves technical aspects of the landscape studies.
+	\item[$\diamond$] Application of RS data is especially important for studies of northern ecosystems, since it enables to perform spatial analysis of remotely located areas in Arctic regions. 
+	\item[$\diamond$] Spatial analysis of land cover types can help to detect local environmental changes.
+\end{itemize}	
+
+
+	
+\end{block}
+\end{frame}
+%
+\section{Thanks} 
+
+\begin{frame}
+\frametitle{Acknowledgement}
+\begin{block}
+{Thanks}
+The financial support of this research has been provided by the Fellowship of the Center for International Mobility (CIMO) of Finland. Contract No. TM-10-7124 (Decision 9.11.2010).\\ \vspace{1em}
+This research was done at the Arctic Center, University of Lapland.\\ \vspace{1em}
+I thank my scientific chief Prof. Dr. Bruce C. Forbes from the Arctic Center and colleague Dr. Timo Kumpula from the University of Eastern Finland for our collaboration. 
+\end{block}
+\end{frame}
+%
+\section{References} 
+
+\begin{frame}
+\frametitle{Bibliography \small (selected)}
+\footnotesize{
+
+\begin{thebibliography}{99} \tiny
+ 	\bibitem[Forbes, 2010]{Forbes}Forbes, B.C., Fauria, M.M., and Zetterberg, P. (2010). \newblock Russian Arctic warming and “greening” are closely tracked by tundra shrub willows. \newblock \emph{Global Change Biology}, 16 (5), 1542-1554.
+	\bibitem[Forbes and McKendrick, 2002]{ForbesMc}Forbes, B.C. and McKendrick, J.D. (2002). \newblock Polar tundra. Handbook of Ecological Restoration, 2. Restoration in Practice. Ed. Perrow, M., and Davy, A.J. Cambridge: \newblock \emph{Cambridge University Press}, 355-375.
+	\bibitem[Kumpula, 2011]{Kumpula}Kumpula, T., Pajunen, A., Kaarlejärvi, E., and Forbes, B.C., (2011). \newblock Land use and land cover change in Arctic Russia: Ecological and social implications of industrial development. \newblock \emph{Global Environmental Change} 21, 550-562.
+ 	\bibitem[Leibman, 2007]{Leibman}Leibman, M.O. and Kizyakov, A.I., (2007). \newblock Cryogenic Landslides of the Yamal and Yugorsky Peninsula (Kriogennyie opolzni Yamala Yugorskovo poluostrova). Moscow: Earth Cryosphere Institute, Siberian Branch, Russian Academy of Science (in Russian) 
+	\bibitem[Rees, 2003]{Cohen} Rees, W.G., Williams, M., and Vitebsky, P. (2003). \newblock Mapping land cover change in a reindeer herding area of the Russian Arctic using Landsat TM and ETM+ imagery and indigenous knowledge. \newblock \emph{Remote Sensing of Environment}, 85, 441-452.
+	
+\end{thebibliography}
+}
+\end{frame}
+
+\begin{frame}
+\centerline{The End}
+\end{frame}
+
+
+% End of slides
+\end{document} 
